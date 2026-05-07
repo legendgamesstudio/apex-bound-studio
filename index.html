@@ -678,9 +678,9 @@
 
       <!-- Desktop nav links -->
       <ul class="nav-links" id="nav-links">
-        <li><a href="#about" onclick="closeMenu()">About</a></li>
-        <li><a href="#apps" onclick="closeMenu()">Apps</a></li>
-        <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+        <li><a href="javascript:void(0)" onclick="scrollTo('about'); closeMenu()">About</a></li>
+        <li><a href="javascript:void(0)" onclick="scrollTo('apps'); closeMenu()">Apps</a></li>
+        <li><a href="javascript:void(0)" onclick="scrollTo('contact'); closeMenu()">Contact</a></li>
         <li><a href="javascript:void(0)" onclick="showPrivacy(); closeMenu()">Privacy Policy</a></li>
       </ul>
 
@@ -727,7 +727,7 @@
               🎮 View on Google Play
             </a>
 
-            <a href="#apps" class="btn btn-ghost">See Our Apps</a>
+            <a href="javascript:void(0)" onclick="scrollTo('apps')" class="btn btn-ghost">See Our Apps</a>
           </div>
 
         </div>
@@ -1058,7 +1058,17 @@
   ============================================= -->
   <script>
 
-    // ── PRIVACY PAGE TOGGLE ──────────────────────────
+    // ── SMOOTH SCROLL WITHOUT # IN URL ──────────────
+    // Scrolls to a section by ID without changing the URL
+
+    function scrollTo(id) {
+      const el = document.getElementById(id);
+      if (el) {
+        const offset = 80; // height of fixed navbar
+        const top = el.getBoundingClientRect().top + window.pageYOffset - offset;
+        window.scrollTo({ top: top, behavior: 'smooth' });
+      }
+    }
     // Shows the Privacy Policy and hides the main content
 
     function showPrivacy() {
