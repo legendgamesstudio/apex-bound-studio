@@ -678,9 +678,9 @@
 
       <!-- Desktop nav links -->
       <ul class="nav-links" id="nav-links">
-        <li><a href="javascript:void(0)" onclick="scrollTo('about'); closeMenu()">About</a></li>
-        <li><a href="javascript:void(0)" onclick="scrollTo('apps'); closeMenu()">Apps</a></li>
-        <li><a href="javascript:void(0)" onclick="scrollTo('contact'); closeMenu()">Contact</a></li>
+        <li><a href="javascript:void(0)" onclick="scrollToSection('about'); closeMenu()">About</a></li>
+        <li><a href="javascript:void(0)" onclick="scrollToSection('apps'); closeMenu()">Apps</a></li>
+        <li><a href="javascript:void(0)" onclick="scrollToSection('contact'); closeMenu()">Contact</a></li>
         <li><a href="javascript:void(0)" onclick="showPrivacy(); closeMenu()">Privacy Policy</a></li>
       </ul>
 
@@ -727,7 +727,7 @@
               🎮 View on Google Play
             </a>
 
-            <a href="javascript:void(0)" onclick="scrollTo('apps')" class="btn btn-ghost">See Our Apps</a>
+            <a href="javascript:void(0)" onclick="scrollToSection('apps')" class="btn btn-ghost">See Our Apps</a>
           </div>
 
         </div>
@@ -1061,7 +1061,7 @@
     // ── SMOOTH SCROLL WITHOUT # IN URL ──────────────
     // Scrolls to a section by ID without changing the URL
 
-    function scrollTo(id) {
+    function scrollToSection(id) {
       const el = document.getElementById(id);
       if (el) {
         const offset = 80; // height of fixed navbar
